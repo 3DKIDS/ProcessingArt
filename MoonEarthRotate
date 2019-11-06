@@ -41,4 +41,6 @@ void draw() {
   
   angleSun += 0.01;
   angleEarth += 0.03;
+  
+  println(angleSun);
 }
