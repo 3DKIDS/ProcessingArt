@@ -1,0 +1,36 @@
+float angleSun = 0;
+float angleEarth = 0;
+
+void setup() {
+  size(300,300,P3D);  
+  camera(0.0, -40.0, 200.0, 0.0, 0.0, 0.0,0.0, 1.0, 0.0);
+}
+
+void draw() {
+  
+  directionalLight(100, 100, 100, 0, 1, -1);
+  noStroke();
+  background(204);
+  fill(255,255,0);
+      
+  rotateY(angleSun);
+  sphere(25); 
+  
+  pushMatrix();
+    fill(155,255,100);  
+    translate(60, 0, 0);
+    sphere(10); 
+    
+        /*moon rotate*/
+        rotateY(angleEarth);
+        pushMatrix();
+        fill(255,100,100);  
+        translate(20, 0, 0);
+        sphere(5); 
+        popMatrix();
+    
+  popMatrix();
+  
+  angleSun += 0.01;
+  angleEarth += 0.03;
+}
